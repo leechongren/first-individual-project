@@ -6,7 +6,9 @@ const PLAYER = [
             "HP": 50,
             "Attack": 3,
             "Defence": 2,
-        }
+        },
+        "level": 1,
+        "acquired_exp": 0,
     },
 
     {
@@ -16,7 +18,9 @@ const PLAYER = [
             "HP": 30,
             "Attack": 2,
             "Defence": 2,
-        }
+        },
+        "level": 1,
+        "acquired_exp": 0,
     }
 
 ]
