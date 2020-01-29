@@ -5,7 +5,7 @@ import monsterdata from '../objects/monster'
 import MonsterCard from '../components/monsterCard'
 import './battleDisplay.css'
 import { Link } from 'react-router-dom'
-import { DialogueBox, DefeatMonsterDialogueBox } from '../components/dialogueBox'
+import { DialogueBox, DefeatMonsterDialogueBox, DefeatedDialogueBox } from '../components/dialogueBox'
 
 class BattleDisplay extends React.Component {
     constructor(props) {
@@ -15,9 +15,9 @@ class BattleDisplay extends React.Component {
             playerRemainingHp: this.props.location.HP,
             monsterRemainingHp: monsterdata[0].base.HP,
             triggerDialogueBox: false,
+            playerExp: this.props.location.Acquired_exp
         }
-        // this.props.playerAttackStat
-        // this.props.playerRemainingHp
+
     }
 
     attackDamageCalculation = () => {
@@ -29,37 +29,49 @@ class BattleDisplay extends React.Component {
     }
 
 
+
     render() {
         const updatedStats = {
             pathname: "/battle/profile",
-            HP: this.state.playerRemainingHp
+            HP: this.state.playerRemainingHp,
+            Exp: this.state.playerExp + monsterdata[0].exp
         }
+        const playerHp = this.state.playerRemainingHp
+        const isPlayerAlive = playerHp > 0 ? true : false
+        const monsterHp = this.state.monsterRemainingHp
+        const isMonsterAlive = monsterHp > 0 ? true : false
         return <div>
             <div className="display">
                 <div className="playerDisplay">
                     <PlayerCard player={playerdata[0]} />
-                    <div>HP: {this.state.playerRemainingHp}</div>
-                    {this.state.monsterRemainingHp > 0 &&
+                    <div>HP: {playerHp}</div>
+                    {isMonsterAlive &&
                         <button onClick={this.attackDamageCalculation}>Attack!</button>}
                 </div>
                 <div>
                     <MonsterCard monster={monsterdata[0]} />
-                    <div>HP: {this.state.monsterRemainingHp}</div>
+                    <div>HP: {monsterHp}</div>
                 </div>
             </div>
-            {this.state.triggerDialogueBox && this.state.monsterRemainingHp > 0 && <DialogueBox
+            {isPlayerAlive && this.state.triggerDialogueBox && isMonsterAlive && <DialogueBox
                 playerAttack={playerdata[0].base.Attack}
                 monster={monsterdata[0].type}
                 monsterAttack={monsterdata[0].base.Attack}
             />}
-            {this.state.monsterRemainingHp <= 0 && <DefeatMonsterDialogueBox
+            {isPlayerAlive && !isMonsterAlive && <DefeatMonsterDialogueBox
                 monster={monsterdata[0].type}
                 exp={monsterdata[0].exp}
-            />}
-            {this.state.monsterRemainingHp <= 0 &&
+            />
+            }
+
+            {isPlayerAlive && !isMonsterAlive && <div className="return-button" >
                 <Link to={updatedStats}>
                     <button>Return</button>
-                </Link>}
+                </Link>
+            </div>}
+
+
+            {!isPlayerAlive && <DefeatedDialogueBox />}
 
         </div>
     }
