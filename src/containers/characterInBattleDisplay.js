@@ -8,7 +8,8 @@ class CharacterInBattleDisplay extends React.Component {
             Vocation: playerdata[0].type,
             HP: this.props.location.HP,
             Attack: playerdata[0].base.Attack,
-            Defence: playerdata[0].base.Defence
+            Defence: playerdata[0].base.Defence,
+            Exp: this.props.location.Exp
         }
     }
 
@@ -16,7 +17,8 @@ class CharacterInBattleDisplay extends React.Component {
     render() {
         const updatedStats = {
             pathname: "/battle",
-            HP: this.state.HP
+            HP: this.state.HP,
+            Acquired_exp: this.state.Exp
         }
         return <div>
             Character Profile <br />
@@ -24,6 +26,7 @@ class CharacterInBattleDisplay extends React.Component {
             HP: {this.state.HP} <br />
             Attack: {this.state.Attack} <br />
             Defence: {this.state.Defence} <br />
+            Exp: {this.state.Exp} <br />
             <Link to={updatedStats}>
                 <button>To Battle!</button>
             </Link>
