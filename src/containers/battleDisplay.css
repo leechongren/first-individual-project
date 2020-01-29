@@ -2,3 +2,7 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.return-button{
+    text-align: center;
+}

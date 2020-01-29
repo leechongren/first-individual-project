@@ -3,7 +3,7 @@ const PLAYER = [
         "id": 1,
         "type": "Warrior",
         "base": {
-            "HP": 50,
+            "HP": 30,
             "Attack": 3,
             "Defence": 2,
         },
