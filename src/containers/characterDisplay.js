@@ -1,33 +1,33 @@
 import React from 'react'
 import playerdata from '../objects/player'
 import { Link } from 'react-router-dom'
-
+import PlayerCard from '../components/playerCard'
+import './characterDisplay.css'
 class CharacterDisplay extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            Vocation: playerdata[0].type,
             HP: playerdata[0].base.HP,
-            Attack: playerdata[0].base.Attack,
-            Defence: playerdata[0].base.Defence,
-            Acquired_exp: playerdata[0].acquired_exp
+            Acquired_exp: playerdata[0].acquired_exp,
+            ID: playerdata[0].id
         }
     }
 
+
+
     render() {
-        const originalStats = {
+        const toBattle = {
             pathname: "/battle",
             HP: this.state.HP,
-            Acquired_exp: this.state.Acquired_exp
+            Acquired_exp: this.state.Acquired_exp,
+            MonsterID: Math.floor(Math.random() * Math.floor(2))
         }
-        return <div>
+        return <div className="start-char-display">
             Character Profile <br />
-            Vocation: {this.state.Vocation} <br />
-            HP: {this.state.HP} <br />
-            Attack: {this.state.Attack} <br />
-            Defence: {this.state.Defence} <br />
+            <PlayerCard player={playerdata[0]} /> <br />
+            HP: {this.state.HP}/{this.state.HP} <br />
             Acquired Exp: {this.state.Acquired_exp} <br />
-            <Link to={originalStats}>
+            <Link to={toBattle}>
                 <button>To Battle!</button>
             </Link>
 
