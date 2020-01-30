@@ -12,7 +12,7 @@ const playerCard = ({ player }) => {
 
     return (
         <div className="player-card">
-            <img className="player-image" alt="Warrior" src={process.env.PUBLIC_URL + `characterImages/${id}.png`} />
+            <img className="player-image" alt="Warrior" src={process.env.PUBLIC_URL + `/characterImages/${id}.png`} />
             <div className="type">{type}</div>
             {filterOutHpStat(Object.entries(base)).map(seperateBase => {
                 return <p className="base">{seperateBase[0] + ": " + seperateBase[1]}</p>
