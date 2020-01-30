@@ -3,7 +3,7 @@ const MONSTER = [
         "id": 1,
         "type": "Goblin",
         "base": {
-            "HP": 15,
+            "HP": 10,
             "Attack": 2,
             "Defence": 2,
         },
@@ -12,10 +12,10 @@ const MONSTER = [
 
     {
         "id": 2,
-        "type": "Orc",
+        "type": "Troll",
         "base": {
-            "HP": 50,
-            "Attack": 2,
+            "HP": 13,
+            "Attack": 3,
             "Defence": 2,
         },
         "exp": 10

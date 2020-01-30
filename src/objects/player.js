@@ -3,11 +3,11 @@ const PLAYER = [
         "id": 1,
         "type": "Warrior",
         "base": {
-            "HP": 30,
+            "HP": 40,
             "Attack": 3,
             "Defence": 2,
         },
-        "level": 1,
+        "level": 0,
         "acquired_exp": 0,
     },
 
@@ -19,7 +19,7 @@ const PLAYER = [
             "Attack": 2,
             "Defence": 2,
         },
-        "level": 1,
+        "level": 0,
         "acquired_exp": 0,
     }
 
