@@ -13,9 +13,11 @@ class BattleDisplay extends React.Component {
         this.state = {
             playerAttackStat: playerdata[0].base.Attack,
             playerRemainingHp: this.props.location.HP,
-            monsterRemainingHp: monsterdata[0].base.HP,
+            monsterRemainingHp: monsterdata[this.props.location.MonsterID].base.HP,
             triggerDialogueBox: false,
-            playerExp: this.props.location.Acquired_exp
+            playerExp: this.props.location.Acquired_exp,
+            monsterID: this.props.location.MonsterID,
+            playerMaxHP: playerdata[0].base.HP
         }
 
     }
@@ -23,7 +25,7 @@ class BattleDisplay extends React.Component {
     attackDamageCalculation = () => {
         this.setState({
             monsterRemainingHp: this.state.monsterRemainingHp - playerdata[0].base.Attack,
-            playerRemainingHp: this.state.playerRemainingHp - monsterdata[0].base.Attack,
+            playerRemainingHp: this.state.playerRemainingHp - monsterdata[this.state.monsterID].base.Attack,
             triggerDialogueBox: true,
         })
     }
@@ -34,7 +36,8 @@ class BattleDisplay extends React.Component {
         const updatedStats = {
             pathname: "/battle/profile",
             HP: this.state.playerRemainingHp,
-            Exp: this.state.playerExp + monsterdata[0].exp
+            Exp: this.state.playerExp + monsterdata[this.state.monsterID].exp,
+            MonsterID: this.state.monsterID
         }
         const playerHp = this.state.playerRemainingHp
         const isPlayerAlive = playerHp > 0 ? true : false
@@ -44,23 +47,23 @@ class BattleDisplay extends React.Component {
             <div className="display">
                 <div className="playerDisplay">
                     <PlayerCard player={playerdata[0]} />
-                    <div>HP: {playerHp}</div>
+                    <div>HP: {playerHp}/{this.state.playerMaxHP}</div>
                     {isMonsterAlive &&
                         <button onClick={this.attackDamageCalculation}>Attack!</button>}
                 </div>
                 <div>
-                    <MonsterCard monster={monsterdata[0]} />
+                    <MonsterCard monster={monsterdata[this.state.monsterID]} />
                     <div>HP: {monsterHp}</div>
                 </div>
             </div>
             {isPlayerAlive && this.state.triggerDialogueBox && isMonsterAlive && <DialogueBox
                 playerAttack={playerdata[0].base.Attack}
-                monster={monsterdata[0].type}
-                monsterAttack={monsterdata[0].base.Attack}
+                monster={monsterdata[this.state.monsterID].type}
+                monsterAttack={monsterdata[this.state.monsterID].base.Attack}
             />}
             {isPlayerAlive && !isMonsterAlive && <DefeatMonsterDialogueBox
-                monster={monsterdata[0].type}
-                exp={monsterdata[0].exp}
+                monster={monsterdata[this.state.monsterID].type}
+                exp={monsterdata[this.state.monsterID].exp}
             />
             }
 
