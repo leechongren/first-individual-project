@@ -1,7 +1,8 @@
 import React from 'react'
 import './monsterCard.css'
+import uuidv1 from 'uuid/v1'
 
-const monsterCard = ({ monster }) => {
+const monsterCard = ({ monster, HP }) => {
     const { id, type, base } = monster
 
     function filterOutHpStat(arr) {
@@ -13,11 +14,14 @@ const monsterCard = ({ monster }) => {
     return (
         <div className="monster-card">
             <img className="monster-image" alt="Monster" src={process.env.PUBLIC_URL + `monsterImages/${id}.png`} />
-            <div className="type">{type}</div>
-            {filterOutHpStat(Object.entries(base)).map(seperateBase => {
-                return <p className="base">{seperateBase[0] + ": " + seperateBase[1]}</p>
-            })
-            }
+            <div className="monster-stats">
+                <div className="type">{type}</div>
+                {filterOutHpStat(Object.entries(base)).map(seperateBase => {
+                    return <div key={uuidv1()} className="base">{seperateBase[0] + ": " + seperateBase[1]}</div>
+                })
+                }
+                <div>HP: {HP}</div>
+            </div>
         </div>
     )
 

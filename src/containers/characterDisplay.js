@@ -9,24 +9,31 @@ class CharacterDisplay extends React.Component {
         this.state = {
             HP: playerdata[0].base.HP,
             Acquired_exp: playerdata[0].acquired_exp,
-            ID: playerdata[0].id
+            ID: playerdata[0].id,
+            Level: playerdata[0].level
         }
     }
 
-
+    getrandomId = (num) => {
+        return Math.floor(Math.random() * Math.floor(num))
+    }
 
     render() {
         const toBattle = {
             pathname: "/battle",
             HP: this.state.HP,
             Acquired_exp: this.state.Acquired_exp,
-            MonsterID: Math.floor(Math.random() * Math.floor(2))
+            MonsterID: this.getrandomId(2),
+            Level: this.state.Level
         }
         return <div className="start-char-display">
             Character Profile <br />
-            <PlayerCard player={playerdata[0]} /> <br />
-            HP: {this.state.HP}/{this.state.HP} <br />
-            Acquired Exp: {this.state.Acquired_exp} <br />
+            <PlayerCard player={playerdata[0]}
+                HP={this.state.HP}
+                MaxHP={this.state.HP}
+                Exp={this.state.Acquired_exp}
+                Level={this.state.Level} /> <br />
+
             <Link to={toBattle}>
                 <button>To Battle!</button>
             </Link>

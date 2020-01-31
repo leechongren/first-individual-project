@@ -1,0 +1,22 @@
+.home-page-div{
+    text-align: center;
+    margin-top: 20em;
+}
+
+.start-game-link{
+    text-decoration: none;
+}
+
+.start-game-icon{
+    display: inline-block;
+    background-color: gray;
+    color: white;
+    margin-top: 20px;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.start-game-icon:hover{
+    background-color: black;
+    color: yellow
+}

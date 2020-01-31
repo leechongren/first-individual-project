@@ -2,3 +2,9 @@
     height: 150px;
     width: 150px;
 }
+
+.monster-stats{
+    background-color: white;
+    border-radius: 0.5em;
+    padding: 0.25em;
+}
