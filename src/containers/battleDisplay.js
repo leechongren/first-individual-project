@@ -1,11 +1,11 @@
 import React from 'react'
 import playerdata from '../objects/player'
-import PlayerCard from '../components/playerCard'
+import PlayerCard from '../components/PlayerCard'
 import monsterdata from '../objects/monster'
-import MonsterCard from '../components/monsterCard'
+import MonsterCard from '../components/MonsterCard'
 import './BattleDisplay.css'
 import { Link } from 'react-router-dom'
-import { DialogueBox, TieDialogueBox, DefeatMonsterDialogueBox, DefeatedDialogueBox } from '../components/dialogueBox'
+import { DialogueBox, TieDialogueBox, DefeatMonsterDialogueBox, DefeatedDialogueBox } from '../components/DialogueBox'
 
 class BattleDisplay extends React.Component {
     constructor(props) {

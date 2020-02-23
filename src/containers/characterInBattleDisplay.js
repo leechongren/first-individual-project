@@ -1,7 +1,7 @@
 import React from 'react'
 import playerdata from '../objects/player'
 import { Link } from 'react-router-dom'
-import PlayerCard from '../components/playerCard'
+import PlayerCard from '../components/PlayerCard'
 import './CharacterInBattleDisplay.css'
 
 class CharacterInBattleDisplay extends React.Component {
