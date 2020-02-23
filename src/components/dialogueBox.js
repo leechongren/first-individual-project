@@ -1,5 +1,5 @@
 import React from 'react'
-import './dialogueBox.css'
+import './DialogueBox.css'
 import { Link } from 'react-router-dom'
 
 export const DialogueBox = ({ playerAttack, monster, monsterAttack, playerAction, monsterAction }) => {

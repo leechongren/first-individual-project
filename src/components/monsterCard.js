@@ -1,5 +1,5 @@
 import React from 'react'
-import './monsterCard.css'
+import './MonsterCard.css'
 import uuidv1 from 'uuid/v1'
 
 const monsterCard = ({ monster, HP }) => {

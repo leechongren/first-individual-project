@@ -1,5 +1,5 @@
 import React from 'react'
-import './playerCard.css'
+import './PlayerCard.css'
 import uuidv1 from 'uuid/v1'
 
 

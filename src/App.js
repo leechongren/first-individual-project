@@ -1,9 +1,9 @@
 import React from 'react';
-import BattleDisplay from './containers/battleDisplay'
+import BattleDisplay from './containers/BattleDisplay'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import HomePage from './containers/homePage'
-import CharacterDisplay from './containers/characterDisplay'
-import CharacterInBattleDisplay from './containers/characterInBattleDisplay';
+import HomePage from './containers/HomePage'
+import CharacterDisplay from './containers/CharacterDisplay'
+import CharacterInBattleDisplay from './containers/CharacterInBattleDisplay';
 
 
 

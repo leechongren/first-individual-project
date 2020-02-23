@@ -1,8 +1,8 @@
 import React from 'react'
 import playerdata from '../objects/player'
 import { Link } from 'react-router-dom'
-import PlayerCard from '../components/playerCard'
-import './characterDisplay.css'
+import PlayerCard from '../components/PlayerCard'
+import './CharacterDisplay.css'
 class CharacterDisplay extends React.Component {
     constructor(props) {
         super(props)

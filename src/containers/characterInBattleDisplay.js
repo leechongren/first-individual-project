@@ -2,7 +2,7 @@ import React from 'react'
 import playerdata from '../objects/player'
 import { Link } from 'react-router-dom'
 import PlayerCard from '../components/playerCard'
-import './characterInBattleDisplay.css'
+import './CharacterInBattleDisplay.css'
 
 class CharacterInBattleDisplay extends React.Component {
     constructor(props) {

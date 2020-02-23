@@ -3,7 +3,7 @@ import playerdata from '../objects/player'
 import PlayerCard from '../components/playerCard'
 import monsterdata from '../objects/monster'
 import MonsterCard from '../components/monsterCard'
-import './battleDisplay.css'
+import './BattleDisplay.css'
 import { Link } from 'react-router-dom'
 import { DialogueBox, TieDialogueBox, DefeatMonsterDialogueBox, DefeatedDialogueBox } from '../components/dialogueBox'
 
