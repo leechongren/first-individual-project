@@ -1,42 +1,42 @@
-.home-page-div{
-    text-align: center;
-    margin-top: 12em;
+.home-page-div {
+  text-align: center;
+  margin-top: 12em;
 }
 
-.gif-intro-page{
-    position: relative;
-    height: 200px;
-    margin-bottom: 5px;
-    border-radius: 1em;
-    box-shadow: -15px 15px 3px -4px rgba(0,0,0,0.3);
-    transform: scale(1);
-    transition: all 0.3s;
+.gif-intro-page {
+  position: relative;
+  height: 200px;
+  margin-bottom: 5px;
+  border-radius: 1em;
+  box-shadow: -15px 15px 3px -4px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  transition: all 0.3s;
 }
 
-
-.intro-text{
-    color: white;
+.intro-text {
+  color: white;
 }
 
-.start-game-link{
-    text-decoration: none;
+.start-game-link {
+  text-decoration: none;
 }
 
-.start-game-icon{
-    display: inline-block;
-    background-color: gray;
-    color: white;
-    margin-top: 20px;
-    padding: 2em;
-    border-radius: 1em;
-    box-shadow: -15px 15px 3px -4px rgba(0,0,0,0.3);
-    transform: scale(1);
-    transition: all 0.3s;
+.start-game-icon {
+  display: inline-block;
+  background-color: gray;
+  color: white;
+  margin-top: 20px;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: -15px 15px 3px -4px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  transition: all 0.3s;
+  margin-left: 1em;
 }
 
-.start-game-icon:hover{
-    background-color: black;
-    color: yellow;
-    box-shadow: -12px 12px 3px -5px rgba(0,0,0,0.5);
-    transform: scale(0.95);
+.start-game-icon:hover {
+  background-color: black;
+  color: yellow;
+  box-shadow: -12px 12px 3px -5px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
 }
